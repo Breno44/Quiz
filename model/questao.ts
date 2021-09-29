@@ -1,3 +1,4 @@
+import { embaralhar } from "../functions/arrays";
 import RespostaModel from "./resposta";
 
 export default class QuestaoModel {
@@ -6,7 +7,7 @@ export default class QuestaoModel {
   #respostas: RespostaModel[];
   #acertou: boolean;
 
-  constructor(id: number, enunciado: string, respostas: RespostaModel[], acertou: false) {
+  constructor(id: number, enunciado: string, respostas: RespostaModel[], acertou = false) {
     this.#id = id;
     this.#enunciado = enunciado;
     this.#respostas = respostas;
@@ -35,6 +36,11 @@ export default class QuestaoModel {
     }
 
     return false;
+  }
+
+  embaralharRespostas(): QuestaoModel {
+    let respostasEmbaralhadas = embaralhar(this.#respostas);
+    return new QuestaoModel(this.#id, this.#enunciado, respostasEmbaralhadas, this.#acertou);
   }
 
   paraObjeto() {
