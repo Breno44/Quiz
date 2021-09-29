@@ -10,5 +10,16 @@ export default function Home() {
     RespostaModel.certa("preta"),
   ]);
 
-  return <Questao valor={questaoTeste} />;
+  return (
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "100vh",
+      }}
+    >
+      <Questao valor={questaoTeste} />
+    </div>
+  );
 }
