@@ -1,3 +1,19 @@
+import styles from "../styles/Resultado.module.css";
+import { useRouter } from "next/router";
+
 export default function Resultado() {
-  return <div>Resultado</div>;
+  const router = useRouter();
+
+  const total = +router.query.total;
+  const certas = +router.query.certas;
+  const percentual = Math.round((certas / total) * 100);
+
+  return (
+    <div>
+      <h1>Resultado Final</h1>
+      <span>{total}</span>
+      <span>{certas}</span>
+      <span>{percentual}</span>
+    </div>
+  );
 }
