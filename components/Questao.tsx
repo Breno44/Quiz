@@ -4,6 +4,13 @@ import styles from "../styles/Questao.module.css";
 import Enunciado from "./Enunciado";
 import Resposta from "./Resposta";
 
+const letras = [
+  {valor: "A", cor: "#F2C866"},
+  {valor: "B", cor: "#F266BA"},
+  {valor: "C", cor: "#85D4F2"},
+  {valor: "D", cor: "#BCE596"},
+]
+
 interface QuestaoProps {
   valor: QuestaoModel;
 }
@@ -13,7 +20,7 @@ export default function Questao(props: QuestaoProps) {
 
   function renderizarRespostas() {
     return questao.respostas.map((resposta, i) => {
-      return <Resposta valor={resposta} indice={i} letra="A" corFundoLetra="#F2C866" key={i} />;
+      return <Resposta valor={resposta} indice={i} letra={letras[i].valor} corFundoLetra={letras[i].cor} key={i} />;
     });
   }
 
