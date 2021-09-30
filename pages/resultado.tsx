@@ -1,4 +1,6 @@
 import styles from "../styles/Resultado.module.css";
+import Estatistica from "../components/Estatistica";
+import Botao from "../components/Botao";
 import { useRouter } from "next/router";
 
 export default function Resultado() {
@@ -9,11 +11,14 @@ export default function Resultado() {
   const percentual = Math.round((certas / total) * 100);
 
   return (
-    <div>
+    <div className={styles.resultado}>
       <h1>Resultado Final</h1>
-      <span>{total}</span>
-      <span>{certas}</span>
-      <span>{percentual}</span>
+      <div style={{ display: "flex" }}>
+        <Estatistica texto="perguntas" valor={total} />
+        <Estatistica texto="certas" valor={certas} corFundo="#9cd2a4" />
+        <Estatistica texto="percentual" valor={`${percentual}%`} corFundo="#de6a33" />
+      </div>
+      <Botao href="/" texto="Tentar Novamente" />
     </div>
   );
 }
