@@ -33,7 +33,12 @@ export default function Home() {
         height: "100vh",
       }}
     >
-      <Questao valor={questao} respostaFornecida={respostaFornecida} tempoEsgotado={tempoEsgotado} />
+      <Questao
+        valor={questao}
+        respostaFornecida={respostaFornecida}
+        tempoEsgotado={tempoEsgotado}
+        tempoPraResposta={15}
+      />
     </div>
   );
 }
