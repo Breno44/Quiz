@@ -66,12 +66,14 @@ export default function Home() {
     });
   }
 
-  return (
+  return questao ? (
     <Questionario
       questao={questao}
       ultima={idProximaPergunta() === undefined}
       questaoRespondida={questaoRespondida}
       irPraProximoPasso={irPraProximoPasso}
     />
+  ) : (
+    false
   );
 }
