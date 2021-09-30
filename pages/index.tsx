@@ -58,7 +58,7 @@ export default function Home() {
 
   function finalizar() {
     router.push({
-      pathname: "/resultados",
+      pathname: "/resultado",
       query: {
         total: idsDasQuestoes.length,
         certas: respostasCertas,
