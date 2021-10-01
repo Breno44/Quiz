@@ -1,5 +1,5 @@
 <h1 align="center">
-  Prized Door
+  Quiz
 </h1>
 
 <br>
@@ -34,7 +34,7 @@ O app estará disponível no seu browser pelo endereço http://localhost:3000.
 
 ## 💻 Projeto
 
-Portas premiadas feitas com next baseadas em um programa de televisão
+Quiz feito com next 
 
 ## 📝 License
 
